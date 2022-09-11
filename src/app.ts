@@ -36,6 +36,23 @@ function adding(a: Combinable, b: Combinable) {
 const result = adding("Halil", "Max") as string;
 result.split(" ");
 
+const fetchedUserData = {
+  id: "u1",
+  name: "Halil",
+  job: { title: "CEO", description: "My own company" },
+};
+
+console.log(fetchedUserData?.job?.title);
+//bu bir if check eger fetchData varsa job, job varsa titlei yaz anlaminda
+// console.log(fetchedUserData.job && fetchedUserData.job.title) js alternatifi fakat ts de ? koyarak if checke alabiliyoruz
+
+const userInput = "";
+
+//const storedData = userInput || "DEFAULT"; //if emptysting or null or undefined use DEFAULT
+const storedData = userInput ?? "DEFAULT"; //if null or undefined use DEFAULT
+
+console.log(storedData);
+
 /*
 type UnknownEmployee = Employee | Admin;
 
