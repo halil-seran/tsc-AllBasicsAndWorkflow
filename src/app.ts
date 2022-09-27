@@ -44,3 +44,24 @@ type PersonType = {
   age: number;
 };
 // now we created our type we can use it anywhere like other types
+
+// Function & Types
+
+function add2(a: number, b: number): number {
+  return a + b;
+}
+
+function print(value: any): void {
+  console.log(value);
+}
+
+//Generics
+
+function insertAtBeginning<T>(array: T[], value: T): T[] {
+  const newArray = [value, ...array];
+  return newArray;
+}
+
+const demoArray = [1, 2, 3];
+const updatedArray = insertAtBeginning(demoArray, 0); // [0, 1, 2, 3]
+const stringArray = insertAtBeginning(["a", "b", "c"], "d");
